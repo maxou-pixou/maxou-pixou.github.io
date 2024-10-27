@@ -1,0 +1,1164 @@
+
+
+
+/* Styles généraux */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #c5d8d7;
+}
+
+/* titre de ville */
+.affichage {
+    font-size: 50px;
+    font-family: 'Times New Roman', Times, serif;
+    font-style: italic;
+    text-align: left;
+    padding: 50px;
+    background-color: #5B696B;
+    margin: 0;
+}
+
+/* sous-titre de ville */
+.title-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px; /* Ajustez cette valeur en fonction de vos besoins */
+    /* background-image: url('images/cath.png'); */
+    background-color: #C5C5A9;
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat;
+    width: 100%; /* Réduit la largeur de l'image */
+    margin: 0 auto; /* Centre le conteneur horizontalement sur la page */
+    padding: 0;
+    
+}
+
+.title {
+    font-size: 70px;
+    color: #37463D;
+    text-align: center;
+    padding: 0;
+    font-family: "Lucida Handwriting";
+    margin: 0;
+}
+
+/* Onglets Header */
+#album {
+    text-align: left;
+    margin: 0;
+    padding: 14px 20px;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    margin: 0;
+    
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    
+}
+
+.nav-menu {
+    list-style-type: none;
+    padding: 0;
+    margin: 0 auto;
+    display: flex;
+    
+}
+
+.nav-menu li {
+    margin: 0;
+    position: relative;
+    
+}
+
+.nav-menu a {
+    display: block;
+    padding: 14px 20px;
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+    border-radius: 50px;
+}
+
+.nav-menu a:hover {
+    background-color: #575757;
+}
+
+/* Submenu */
+.submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #333;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    z-index: 1000;
+}
+
+.submenu li {
+    width: 200px;
+}
+
+.submenu a {
+    padding: 10px 20px;
+    color: #fff;
+}
+
+.submenu a:hover {
+    background-color: #575757;
+}
+
+/* Show submenu on hover */
+.nav-item:hover .submenu {
+    display: block;
+}
+
+/* Travelling content */
+.content-section {
+    display: none;
+}
+
+/* Berlin */
+#berlin {
+
+    width: 100%;
+    height: 100vh;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+    opacity: 1;
+    transition: none;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+#berlin .clickable {
+    display: block;
+    max-width: 100%;
+    padding: 10px;
+    background-color: rgba(128, 128, 128, 0.9); /* Gris avec 90% d'opacité */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    
+}
+
+#berlin .clickable:hover {
+    background-color: rgba(128, 128, 128, 0.9); /* Augmente l'opacité au survol */
+}
+
+#berlin .title {
+    animation: none;
+    opacity: 1;
+    transition: none;
+}
+
+#berlin .visible {
+    animation: none;
+}
+
+#berlin ul {
+    
+    display: flex;
+    flex-wrap: wrap;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    font-weight: bold;
+}
+
+#berlin li {
+    display: block;  /* Pour enlever tout espacement autour des images inline */
+    max-width: 100%;
+    margin: 10px;
+    text-align: center;
+}
+
+#berlin img {
+    display: block;  /* Pour enlever tout espacement autour des images inline */
+    max-width: 100%;
+    display: block;
+    margin: 0 auto;
+    transition: transform 0.3s ease;
+}
+
+#berlin ul li img:hover {
+    transform: scale(1.05);
+}
+
+/* Chemnitz */
+#chemnitz {
+
+    width: 100%;
+    height: 100vh;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+    opacity: 1;
+    transition: none;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+#chemnitz .clickable {
+    padding: 10px; /* Ajustez la valeur selon vos besoins */
+    background-color: rgba(128, 128, 128, 0.9); /* Gris avec 70% d'opacité */
+    cursor: pointer; /* Change le curseur pour indiquer que l'élément est cliquable */
+    transition: background-color 0.3s ease; /* Ajoute une transition pour un effet visuel */
+}
+
+#chemnitz .clickable:hover {
+    background-color: rgba(128, 128, 128, 0.9); /* Augmente l'opacité au survol */
+}
+
+#chemnitz .title {
+    animation: none;
+    opacity: 1;
+    transition: none;
+}
+
+#chemnitz .visible {
+    animation: none;
+}
+
+#chemnitz ul {
+    display: flex;
+    flex-wrap: wrap;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    font-weight: bold;
+}
+
+#chemnitz li {
+    margin: 10px;
+    text-align: center;
+    
+}
+
+#chemnitz img {
+    display: block;  /* Pour enlever tout espacement autour des images inline */
+    max-width: 100%;
+    display: block;
+    margin: 0 auto;
+    transition: transform 0.3s ease;
+}
+
+#chemnitz ul li img:hover {
+    transform: scale(1.05);
+}
+
+/* Budapest */
+#budapest {
+  
+    width: 100%;
+    height: 100vh;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+    opacity: 1;
+    transition: none;
+    margin: 0;
+    padding: 0;
+}
+
+#budapest .clickable {
+    padding: 10px; /* Ajustez la valeur selon vos besoins */
+    background-color: rgba(128, 128, 128, 0.9); /* Gris avec 70% d'opacité */
+    cursor: pointer; /* Change le curseur pour indiquer que l'élément est cliquable */
+    transition: background-color 0.3s ease; /* Ajoute une transition pour un effet visuel */
+}
+
+#budapest .clickable:hover {
+    background-color: rgba(128, 128, 128, 0.9); /* Augmente l'opacité au survol */
+}
+
+
+#budapest .title {
+    animation: none;
+    opacity: 1;
+    transition: none;
+}
+
+#budapest .visible {
+    animation: none;
+}
+
+#budapest ul {
+    display: flex;
+    flex-wrap: wrap;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+#budapest li {
+    margin: 10px;
+    text-align: center;
+    font-weight: bold;
+    
+}
+#budapest img {
+    display: block;  /* Pour enlever tout espacement autour des images inline */
+    max-width: 100%;
+    display: block;
+    margin: 0 auto;
+    transition: transform 0.3s ease;
+}
+
+#budapest ul li img:hover {
+    transform: scale(1.05);
+}
+
+/* Vienne */
+#vienne {
+  
+    width: 100%;
+    height: 100vh;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+    opacity: 1;
+    transition: none;
+    margin: 0;
+    padding: 0;
+    word-break: break-word;
+}
+
+#vienne .clickable {
+    padding: 10px; /* Ajustez la valeur selon vos besoins */
+    background-color: rgba(128, 128, 128, 0.9); /* Gris avec 70% d'opacité */
+    cursor: pointer; /* Change le curseur pour indiquer que l'élément est cliquable */
+    transition: background-color 0.3s ease; /* Ajoute une transition pour un effet visuel */
+    word-break: break-word;
+}
+
+#vienne .clickable:hover {
+    background-color: rgba(128, 128, 128, 0.9); /* Augmente l'opacité au survol */
+    word-break: break-word;
+}
+
+
+#vienne .title {
+    animation: none;
+    opacity: 1;
+    transition: none;
+    word-break: break-word;
+}
+
+#vienne .visible {
+    animation: none;
+    word-break: break-word;
+}
+
+#vienne ul {
+    display: flex;
+    flex-wrap: wrap;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    word-break: break-word;
+}
+
+#vienne li {
+    margin: 10px;
+    text-align: center;
+    font-weight: bold;
+    word-break: break-word;
+}
+
+#vienne img {
+    display: block;
+    margin: 0 auto;
+    word-break: break-word;
+    transition: transform 0.3s ease;
+}
+
+#vienne ul li img:hover {
+    transform: scale(1.05);
+}
+
+/* Bratislava */
+#bratislava {
+  
+    width: 100%;
+    height: 100vh;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+    opacity: 1;
+    transition: none;
+    margin: 0;
+    padding: 0;
+}
+
+#bratislava .clickable {
+    padding: 10px; /* Ajustez la valeur selon vos besoins */
+    background-color: rgba(128, 128, 128, 0.9); /* Gris avec 70% d'opacité */
+    cursor: pointer; /* Change le curseur pour indiquer que l'élément est cliquable */
+    transition: background-color 0.3s ease; /* Ajoute une transition pour un effet visuel */
+}
+
+#bratislava .clickable:hover {
+    background-color: rgba(128, 128, 128, 0.9); /* Augmente l'opacité au survol */
+}
+
+
+#bratislava .title {
+    animation: none;
+    opacity: 1;
+    transition: none;
+}
+
+#bratislava .visible {
+    animation: none;
+}
+
+#bratislava ul {
+    display: flex;
+    flex-wrap: wrap;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+#bratislava li {
+    margin: 10px;
+    text-align: center;
+    font-weight: bold;
+    
+}
+#bratislava img {
+    display: block;  /* Pour enlever tout espacement autour des images inline */
+    max-width: 100%;
+    display: block;
+    margin: 0 auto;
+    transition: transform 0.3s ease;
+}
+#bratislava ul li img:hover {
+    transform: scale(1.05);
+}
+
+/* Prague */
+#prague {
+    /* background-image: url('images/cath.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; */
+
+    width: 100%;
+    height: 100vh;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+    opacity: 1;
+    transition: none;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+#prague .clickable {
+    padding: 10px; /* Ajustez la valeur selon vos besoins */
+    background-color: rgba(128, 128, 128, 0.9); /* Gris avec 70% d'opacité */
+    cursor: pointer; /* Change le curseur pour indiquer que l'élément est cliquable */
+    transition: background-color 0.3s ease; /* Ajoute une transition pour un effet visuel */
+}
+
+#prague .clickable:hover {
+    background-color: rgba(128, 128, 128, 0.9); /* Augmente l'opacité au survol */
+}
+
+#prague .title {
+    animation: none;
+    opacity: 1;
+    transition: none;
+}
+
+#prague .visible {
+    animation: none;
+}
+
+#prague ul {
+    display: flex;
+    flex-wrap: wrap;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    font-weight: bold;
+}
+
+#prague li {
+    margin: 10px;
+    text-align: center;
+    
+}
+
+#prague img {
+    display: block;  /* Pour enlever tout espacement autour des images inline */
+    max-width: 100%;
+    display: block;
+    margin: 0 auto;
+    transition: transform 0.3s ease;
+}
+
+#prague ul li img:hover {
+    transform: scale(1.05);
+}
+
+/* Dresden */
+#dresden {
+    /* background-image: url('images/cath.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; */
+
+    width: 100%;
+    height: 100vh;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+    opacity: 1;
+    transition: none;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+#dresden .clickable {
+    padding: 10px; /* Ajustez la valeur selon vos besoins */
+    background-color: rgba(128, 128, 128, 0.9); /* Gris avec 70% d'opacité */
+    cursor: pointer; /* Change le curseur pour indiquer que l'élément est cliquable */
+    transition: background-color 0.3s ease; /* Ajoute une transition pour un effet visuel */
+}
+
+#dresden .clickable:hover {
+    background-color: rgba(128, 128, 128, 0.9); /* Augmente l'opacité au survol */
+}
+
+#dresden .title {
+    animation: none;
+    opacity: 1;
+    transition: none;
+}
+
+#dresden .visible {
+    animation: none;
+}
+
+#dresden ul {
+    display: flex;
+    flex-wrap: wrap;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    font-weight: bold;
+}
+
+#dresden li {
+    margin: 10px;
+    text-align: center;
+}
+
+#dresden img {
+    display: block;
+    margin: 0 auto;
+    transition: transform 0.3s ease;
+}
+
+#dresden ul li img:hover {
+    transform: scale(1.05);
+}
+
+/* Leipzig */
+#leipzig {
+    /* background-image: url('images/cath.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; */
+
+    width: 100%;
+    height: 100vh;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+    opacity: 1;
+    transition: none;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+#leipzig .clickable {
+    padding: 10px; /* Ajustez la valeur selon vos besoins */
+    background-color: rgba(128, 128, 128, 0.9); /* Gris avec 70% d'opacité */
+    cursor: pointer; /* Change le curseur pour indiquer que l'élément est cliquable */
+    transition: background-color 0.3s ease;
+    display: block;  /* Pour enlever tout espacement autour des images inline */
+    max-width: 100%; /* Ajoute une transition pour un effet visuel */
+}
+
+#leipzig .clickable:hover {
+    background-color: rgba(128, 128, 128, 0.9); /* Augmente l'opacité au survol */
+}
+
+#leipzig .title {
+    animation: none;
+    opacity: 1;
+    transition: none;
+}
+
+#leipzig .visible {
+    animation: none;
+}
+
+#leipzig ul {
+    display: flex;
+    flex-wrap: wrap;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    font-weight: bold;
+}
+
+#leipzig li {
+    margin: 10px;
+    text-align: center;
+}
+
+#leipzig img {
+    
+    display: block;
+    margin: 0 auto;
+    transition: transform 0.3s ease;
+}
+
+#leipzig ul li img:hover {
+    transform: scale(1.05);
+}
+
+/* Mars - Friends */
+#mars {
+    /* background-image: url('images/cath.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; */
+
+    width: 100%;
+    height: 100vh;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+    opacity: 1;
+    transition: none;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+#mars .clickable {
+    padding: 10px; /* Ajustez la valeur selon vos besoins */
+    background-color: rgba(128, 128, 128, 0.9); /* Gris avec 70% d'opacité */
+    cursor: pointer; /* Change le curseur pour indiquer que l'élément est cliquable */
+    transition: background-color 0.3s ease;
+    display: block;  /* Pour enlever tout espacement autour des images inline */
+    /* Ajoute une transition pour un effet visuel */
+}
+
+#mars .clickable:hover {
+    background-color: rgba(128, 128, 128, 0.9); /* Augmente l'opacité au survol */
+}
+
+#mars .title {
+    animation: none;
+    opacity: 1;
+    transition: none;
+}
+
+#mars .visible {
+    animation: none;
+}
+
+#mars ul {
+    display: flex;
+    flex-wrap: wrap;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    font-weight: bold;
+}
+
+#mars li {
+    margin: 5px; /* Réduit l'espace autour de chaque cadre */
+    text-align: center;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: auto; /* Ajuste la taille du cadre en fonction de son contenu */
+}
+
+#mars img {
+    max-width: 100%; /* Utilise un pourcentage pour ajuster la taille de l'image */
+    height: auto; /* Conserve le ratio de l'image */
+    display: block;
+    margin: 0 auto;
+    transition: transform 0.3s ease;
+}
+
+#mars ul li img:hover {
+    transform: scale(1.05);
+}
+
+/* AVRIL - Friends */
+#avril {
+    /* background-image: url('images/cath.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; */
+
+    width: 100%;
+    height: 100vh;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+    opacity: 1;
+    transition: none;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+#avril .clickable {
+    padding: 10px; /* Ajustez la valeur selon vos besoins */
+    background-color: rgba(128, 128, 128, 0.9); /* Gris avec 70% d'opacité */
+    cursor: pointer; /* Change le curseur pour indiquer que l'élément est cliquable */
+    transition: background-color 0.3s ease;
+    display: block;  /* Pour enlever tout espacement autour des images inline */
+    max-width: 100%; /* Ajoute une transition pour un effet visuel */
+}
+
+#avril .clickable:hover {
+    background-color: rgba(128, 128, 128, 0.9); /* Augmente l'opacité au survol */
+}
+
+#avril .title {
+    animation: none;
+    opacity: 1;
+    transition: none;
+}
+
+#avril .visible {
+    animation: none;
+}
+
+#avril ul {
+    display: flex;
+    flex-wrap: wrap;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    font-weight: bold;
+}
+
+#avril li {
+    margin: 10px;
+    text-align: center;
+}
+
+#avril img {
+    
+    display: block;
+    margin: 0 auto;
+    transition: transform 0.3s ease;
+}
+
+#avril ul li img:hover {
+    transform: scale(1.05);
+}
+
+/* MAI - Friends */
+#mai {
+    /* background-image: url('images/cath.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; */
+
+    width: 100%;
+    height: 100vh;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+    opacity: 1;
+    transition: none;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+#mai .clickable {
+    padding: 10px; /* Ajustez la valeur selon vos besoins */
+    background-color: rgba(128, 128, 128, 0.9); /* Gris avec 70% d'opacité */
+    cursor: pointer; /* Change le curseur pour indiquer que l'élément est cliquable */
+    transition: background-color 0.3s ease;
+    display: block;  /* Pour enlever tout espacement autour des images inline */
+    max-width: 100%; /* Ajoute une transition pour un effet visuel */
+}
+
+#mai .clickable:hover {
+    background-color: rgba(128, 128, 128, 0.9); /* Augmente l'opacité au survol */
+}
+
+#mai .title {
+    animation: none;
+    opacity: 1;
+    transition: none;
+}
+
+#mai .visible {
+    animation: none;
+}
+
+#mai ul {
+    display: flex;
+    flex-wrap: wrap;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    font-weight: bold;
+}
+
+#mai li {
+    margin: 10px;
+    text-align: center;
+}
+
+#mai img {
+    
+    display: block;
+    margin: 0 auto;
+    transition: transform 0.3s ease;
+}
+
+#mai ul li img:hover {
+    transform: scale(1.05);
+}
+
+
+
+/* juin - Friends */
+#juin {
+    /* background-image: url('images/cath.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; */
+
+    width: 100%;
+    height: 100vh;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+    opacity: 1;
+    transition: none;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+#juin .clickable {
+    padding: 10px; /* Ajustez la valeur selon vos besoins */
+    background-color: rgba(128, 128, 128, 0.9); /* Gris avec 70% d'opacité */
+    cursor: pointer; /* Change le curseur pour indiquer que l'élément est cliquable */
+    transition: background-color 0.3s ease;
+    display: block;  /* Pour enlever tout espacement autour des images inline */
+    max-width: 100%; /* Ajoute une transition pour un effet visuel */
+}
+
+#juin .clickable:hover {
+    background-color: rgba(128, 128, 128, 0.9); /* Augmente l'opacité au survol */
+}
+
+#juin .title {
+    animation: none;
+    opacity: 1;
+    transition: none;
+}
+
+#juin .visible {
+    animation: none;
+}
+
+#juin ul {
+    display: flex;
+    flex-wrap: wrap;
+    list-style-type: none;
+}
+
+    /* juillet - Friends */
+#juillet {
+    /* background-image: url('images/cath.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; */
+
+    width: 100%;
+    height: 100vh;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+    opacity: 1;
+    transition: none;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+#juillet .clickable {
+    padding: 10px; /* Ajustez la valeur selon vos besoins */
+    background-color: rgba(128, 128, 128, 0.9); /* Gris avec 70% d'opacité */
+    cursor: pointer; /* Change le curseur pour indiquer que l'élément est cliquable */
+    transition: background-color 0.3s ease;
+    display: block;  /* Pour enlever tout espacement autour des images inline */
+    max-width: 100%; /* Ajoute une transition pour un effet visuel */
+}
+
+#juillet .clickable:hover {
+    background-color: rgba(128, 128, 128, 0.9); /* Augmente l'opacité au survol */
+}
+
+#juillet .title {
+    animation: none;
+    opacity: 1;
+    transition: none;
+}
+
+#juillet .visible {
+    animation: none;
+}
+
+#juillet ul {
+    display: flex;
+    flex-wrap: wrap;
+    list-style-type: none;
+}
+/*Barre de recherche  */
+/* Conteneur de la barre de recherche */
+.search-container {
+    position: relative;
+    max-width: 400px; /* Largeur maximale du conteneur */
+    margin: 20px auto;
+}
+
+/* Style de l'input de recherche */
+#searchBox {
+    width: 150px; /* La largeur de la barre de recherche est maintenant 80% du conteneur */
+    padding: 10px 15px;
+    border: 2px solid #2c3642;
+    border-radius: 25px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+    transform: translateX(-50%);
+}
+
+/* Changer la couleur de bordure au focus */
+#searchBox:focus {
+    border-color: #425263;
+    outline: none;
+}
+/* Styles pour la liste des suggestions */
+.suggestions-list {
+    position: absolute; /* Positionner les suggestions par rapport au conteneur */
+    top: 100%; /* Positionner sous l'input */
+    left: 0;
+    right: 0; /* Prendre toute la largeur du conteneur */
+    max-height: 300px; /* Hauteur maximale de la liste */
+    overflow-y: auto; /* Barre de défilement si le contenu dépasse la hauteur maximale */
+    background-color: #C5C5A9; /* Fond blanc pour les suggestions */
+    border: 1px solid #313b45; /* Bordure de la liste */
+    border-radius: 0 15px 15px 0; /* Coins arrondis en bas */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ombre portée */
+    z-index: 1000; /* Mettre au-dessus des autres éléments */
+    list-style-type: none; /* Enlever les puces de liste */
+    padding: 0; /* Enlever le padding par défaut */
+    margin: 0; /* Enlever la marge par défaut */
+}
+
+/* Style pour chaque élément de suggestion */
+.suggestions-list li {
+    padding: 10px; /* Espacement intérieur pour les éléments */
+    cursor: pointer; /* Curseur en forme de main au survol */
+    transition: background-color 0.3s ease; /* Effet de transition pour le survol */
+}
+
+/* Changer la couleur de fond au survol */
+.suggestions-list li:hover {
+    background-color: #000000; /* Couleur de fond au survol */
+}
+
+/* Style lorsque la liste est vide */
+.suggestions-list:empty {
+    display: none; /* Cacher la liste si elle est vide */
+}
+
+#cancelButton {
+    position: absolute;
+    right: 0; /* Positionner le bouton à droite du conteneur */
+    top: 50%; /* Centrer verticalement */
+    transform: translateY(-50%); /* Ajuster le centrage vertical */
+    padding: 10px 15px;
+    border: 2px solid #2c3642;
+    background-color: #f44336; /* Couleur du bouton */
+    color: white;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Changer la couleur de fond au survol */
+#cancelButton:hover {
+    background-color: #d32f2f;
+}
+
+/* Conteneur de la vidéo pour l'apparence stylisée */
+.video-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 640px;
+    height: 360px;
+    background-color: #000;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Effet au survol du conteneur vidéo */
+.video-container:hover {
+    transform: scale(1.05);
+}
+
+
+/* Bouton personnalisé pour lire ou mettre en pause */
+.play-button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+/* Effet au survol du bouton */
+.play-button:hover {
+    background-color: #2980b9;
+}
+/* Style pour les sections générales */
+.sub-content-section {
+    margin-bottom: 30px;
+}
+
+
+/* Style pour les éléments cliquables */
+ul .clickable {
+    font-family: Arial, sans-serif; /* Police similaire à celle utilisée pour "Korean food" */
+    font-size: 20px; /* Taille de police pour les éléments de la liste */
+    font-weight: bold;
+    color: #333; /* Couleur du texte */
+    margin-bottom: 15px;
+}
+
+
+
+/* Encadré de la vidéo */
+#video-section .clickable {
+    padding: 10px;
+    background-color: rgba(128, 128, 128, 0.9); /* Fond gris avec opacité */
+    border-radius: 10px;
+   
+    max-width: 100%;
+    text-align: center;
+}
+
+/* Titre de la vidéo dans l'encadré noir */
+#video-section .video-title {
+    font-family: Arial, sans-serif;
+    font-size: 20px;
+    color: #333; /* Couleur du texte */
+    margin-bottom: 10px; /* Espace entre le titre et la vidéo */
+}
+
+#monVideo {
+    width: 300px;
+    height: 500px;
+}

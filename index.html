@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Album Photo Erasmus</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h3 id="album">Album Photo Erasmus</h3>
+        <nav>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#" onclick="showSection('travelling')">Voyage</a>
+                    <ul class="submenu" id="travelling-submenu">
+                        <li><a href="#" onclick="showSubSection('berlin')">Berlin</a></li>
+                        <li><a href="#" onclick="showSubSection('chemnitz')">Chemnitz</a></li>
+                        <li><a href="#" onclick="showSubSection('dresden')">Dresden</a></li>
+                        <li><a href="#" onclick="showSubSection('leipzig')">Leipzig</a></li>
+                        <li><a href="#" onclick="showSubSection('prague')">Prague</a></li>
+                        <li><a href="#" onclick="showSubSection('budapest')">Budapest</a></li>
+                        <li><a href="#" onclick="showSubSection('vienne')">Vienne</a></li>
+                        <li><a href="#" onclick="showSubSection('bratislava')">Bratislava</a></li>
+                    </ul>
+                </li>
+            
+                <li class="nav-item">
+                    <a href="#" onclick="showSection('friends')">Amis</a>
+                    <ul class="submenu" id="friends-submenu">
+                        <li><a href="#" onclick="showSubSection('mars')">Mars</a></li>
+                        <li><a href="#" onclick="showSubSection('avril')">Avril</a></li>
+                        <li><a href="#" onclick="showSubSection('mai')">Mai</a></li>
+                        <li><a href="#" onclick="showSubSection('juin')">Juin</a></li>
+                        <li><a href="#" onclick="showSubSection('juillet')">Juillet</a></li>
+                    </ul>
+                </li>
+
+            </ul>
+        </nav>
+        <div class="search-container">
+            <input type="text" id="searchBox" placeholder="Rechercher..." onkeydown="handleKeyDown(event)" oninput="updateSuggestions()">
+            <ul id="suggestions" class="suggestions-list"></ul>
+            <button id="cancelButton">Cancel</button>   
+        </div>
+        
+    </header>
+
+    <main>
+        <!-- <div class="image-grid">
+            <img src="images\wallpaper\1.png" alt="Photo 1" class="corner-image">
+            <img src="images\wallpaper\2.png" alt="Photo 2" class="corner-image">
+            <img src="images\wallpaper\3.png" alt="Photo 3" class="corner-image">
+            <img src="images\wallpaper\4.png" alt="Photo 4" class="corner-image">
+        </div> -->
+        <div id="results"></div>
+        <script src="script.js"></script>
+        
+        <section id="travelling" class="content-section">
+            <div id="travelling-content">
+
+                <!-- BERLIN -->
+                <section id="berlin" class="sub-content-section" style="display: none;">
+                    <div class="title-container">
+                        <h2 class="title">Berlin</h2>
+                    </div>
+                    <p class="affichage">Monuments</p>
+                    
+                    <ul>
+                        <li class="clickable" data-city="berlin">
+                            La Porte de Brandebourg
+                            <img src="images/berlin/monument/bdrg.png" width="300">
+                        </li>
+                        <li class="clickable" data-city="berlin">
+                            Le Reichstag
+                            <img src="images/berlin/monument/reich.png" width="300">
+                        </li>
+                        <li class="clickable" data-city="berlin">
+                            Le mémorial de l'Holocauste
+                            <img src="images/berlin/monument/memo.png" width="300">
+                        </li>
+                        <li class="clickable" data-city="berlin">
+                            Berliner Dom
+                            <img src="images/berlin/monument/cath.png" width="300">
+                        </li>
+                        <li class="clickable" data-city="berlin">
+                            Berliner Rathaus
+                            <img src="images/berlin/monument/rathaus.png" width="300">
+                        </li>
+                        <li class="clickable" data-city="berlin">
+                            Horloge Universelle
+                            <img src="images/berlin/monument/heure.png" width="300">
+                        </li>
+                        <li class="clickable" data-city="berlin">
+                            Tour Radio
+                            <img src="images/berlin/monument/radio.png" width="300">
+                        </li>
+                        <li class="clickable" data-city="berlin">
+                             Berlin Wall
+                            <img src="images/berlin/monument/wall.png" width="300">
+                        </li>
+                    </ul>
+
+                    <p class="affichage">Clubbing</p>
+                    <ul>
+                        <li class="clickable" data-city="berlin">
+                            Berghain
+                            <img src="images/berlin/clubbing/berghain.png" width="300">
+                        </li>
+                        <li class="clickable" data-city="berlin">
+                            Kitkat
+                            <img src="images/berlin/clubbing/kitkat.png" width="300">
+                        </li>
+                        <li class="clickable" data-city="berlin">
+                            Anomalie Art Club
+                            <img src="images/berlin/clubbing/ano.png" width="300">
+                        </li>
+                        <li class="clickable" data-city="berlin">
+                            Void Club
+                            <img src="images/berlin/clubbing/void.png" width="300">
+                        </li>
+                        <li class="clickable" data-city="berlin">
+                            Alte Münze
+                            <img src="images/berlin/clubbing/alte.png" width="320 ">
+                        </li>
+                        <li class="clickable" data-city="berlin">
+                            Tresor Club
+                            <img src="images/berlin/clubbing/tresor.png" width="300">
+                        </li>
+                    </ul>
+                
+                </section>
+
+                <!-- CHEMNITZ -->
+                <section id="chemnitz" class="sub-content-section" style="display: none;">
+                    <div class="title-container">
+                        <h2 class="title">Chemnitz</h2>
+                    </div>
+                    <p class="affichage">Université TU Chemnitz</p>
+                    
+                    <ul>
+                        <li class="clickable" data-city="chemnitz">
+                            Resid 64/66
+                            <img src="images/chemnitz/resid.png" width="300">
+                        </li>
+
+                        <li class="clickable" data-city="chemnitz">
+                            Resid back side
+                            <img src="images/chemnitz/resid2.png" width="300">
+                        </li>
+
+                        <li class="clickable" data-city="chemnitz">
+                            Vue depuis la fenêtre 409 - 70
+                            <img src="images/chemnitz/view.png" width="300">
+                        </li>
+
+                        <li class="clickable" data-city="chemnitz">
+                            Orangerie
+                            <img src="images/chemnitz/uni.png" width="500">
+                        </li>
+                    </ul>
+                    
+                    <p class="affichage">Monuments</p>
+                    <ul>
+                        <li class="clickable" data-city="chemnitz">
+                            Église de Jacob
+                            <img src="images/chemnitz/egl.png" width="300">
+                        </li>
+
+                        <li class="clickable" data-city="chemnitz">
+                            Karl Marx Monument
+                            <img src="images/chemnitz/karl.png" width="300">
+                        </li>
+
+                        <li class="clickable" data-city="chemnitz">
+                            Turm Brauhaus - Zentrum
+                            <img src="images/chemnitz/turm.png" width="300">
+                        </li>
+
+                        <li class="clickable" data-city="chemnitz">
+                            Opéra
+                            <img src="images/chemnitz/opera.png" width="300">
+                        </li>
+
+                        <li class="clickable" data-city="chemnitz">
+                            Mairie - Rathaus
+                            <img src="images/chemnitz/mairie.png" width="300">
+                        </li>
+
+                        <li class="clickable" data-city="chemnitz">
+                            Lac - Schlossteich
+                            <img src="images/chemnitz/lake.png" width="300">
+                        </li>
+                </section>
+
+                <!-- Prague -->
+                <section id="prague" class="sub-content-section" style="display: none;">
+                    <div class="title-container">
+                        <h2 class="title">Prague</h2>
+                    </div>
+                    <p class="affichage">Ancienne ville - Château</p>
+                    <ul>
+                        <li class="clickable" data-city="prague">
+                            Vielle ville - Ruelle
+                            <img src="images/prague/old.png" width="300">
+                        </li>
+
+                        <li class="clickable" data-city="prague">
+                            Château de Prague
+                            <img src="images/prague/old2.png" width="300">
+                        </li>
+                        <li class="clickable" data-city="prague">
+                            Cathédrale Saint-Guy
+                            <img src="images/prague/chateau.png" width="300">
+                        </li>
+                        <li class="clickable" data-city="prague">
+                            Cathédrale Saint-Guy - Derrière
+                            <img src="images/prague/bat.png" width="300">
+                        </li>
+                    </ul>
+                    <p class="affichage">Centre ville - District I</p>
+                    <ul>
+                        <li class="clickable" data-city="prague">
+                            Maison dansante
+                            <img src="images/prague/danse.png" width="300">
+                        </li>
+
+                        <li class="clickable" data-city="prague">
+                            Horloge Astronomique
+                            <img src="images/prague/horloge.png" width="300">
+                        </li>
+
+                        <li class="clickable" data-city="prague">
+                            Pont Charles
+                            <img src="images/prague/pont.png" width="300">
+                        </li>
+
+                        <li class="clickable" data-city="prague">
+                            After clubbing
+                            <img src="images/prague/ville.png" width="300">
+                        </li>
+                        
+                    </ul>
+
+                    <p class="affichage">Sex Museum</p>
+                    <ul>
+                        <li class="clickable" data-city="prague">
+                            Cinema Érotique
+                            <img src="images/prague/cine.png" width="300">
+                        </li>
+                        <li class="clickable" data-city="prague">
+                            Entrée du musée
+                            <img src="images/prague/sex.png" width="300">
+                        </li>
+                        <li class="clickable" data-city="prague">
+                            Amusant ?! ^^
+                            <img src="images/prague/hop.png" width="300">
+                        </li>
+                    </ul>
+                </section>
+
+                <!-- BUDAPEST -->
+                <section id="budapest" class="sub-content-section" style="display: none;">
+                    <div class="title-container" data-city="budapest">
+                        <h2 class="title">Budapest</h2>
+                    </div>
+                    <p class="affichage">Monuments</p>
+                    <ul>
+                        <li class="clickable" data-city="budapest">
+                            Château de Buda (Vue d'en bas)
+                            <img src="images/budapest/ville/chateau.png" width="300">
+                        </li>
+                        <li class="clickable" data-city="budapest">
+                            Château de Buda (Vue d'en haut)
+                            <img src="images/budapest/ville/chateau2.png" width="300">
+                        </li>
+                        <li class="clickable" data-city="budapest">
+                            Château de Buda (Intérieur)
+                            <img src="images/budapest/ville/chateau3.png" width="300">
+                        </li>
+                        <li class="clickable" data-city="budapest">
+                            Sources thermales
+                            <img src="images/budapest/ville/bassin.png" width="300">
+                        </li>
+                        <li class="clickable" data-city="budapest">
+                            Parlement Hongrois (de près)
+                            <img src="images/budapest/ville/parlement1.png" width="300">
+                        </li>
+                        <li class="clickable" data-city="budapest">
+                            Parlement Hongrois (de loin)
+                            <img src="images/budapest/ville/parlement2.png" width="520">
+                        </li>
+                        <li class="clickable" data-city="budapest">
+                            Bastion des pêcheurs
+                            <img src="images/budapest/ville/bastion.png" width="300">
+                        </li>
+                        <li class="clickable" data-city="budapest">
+                            Basilique St-Stephen
+                            <img src="images/budapest/ville/basi2.png" width="300">
+                        </li>
+                        <li class="clickable" data-city="budapest">
+                            Basilique St-Stephen (Panorama)
+                            <img src="images/budapest/ville/basi.png" width="300">
+                        </li>
+                        <li class="clickable" data-city="budapest">
+                            Opera de Budapest
+                            <img src="images/budapest/ville/opera.png" width="300">
+                        </li>
+                    </ul>
+
+
+                    <p class="affichage">Ruin Bar</p>
+                    <ul>
+                        <li class="clickable" data-city="budapest">
+                            Ruin Bar - Szimpla Kert
+                            <img src="images/budapest/clubbing/ruin.png" width="300">
+                        </li>
+                        <li class="clickable" data-city="budapest">
+                            Ruin Bar - Szimpla Kert
+                            <img src="images/budapest/clubbing/ruin2.png" width="300">
+                        </li>
+                        <li class="clickable" data-city="budapest">
+                            Ruin Bar - Szimpla Kert
+                            <img src="images/budapest/clubbing/ruin3.png" width="300">
+                        </li>
+                    </ul>
+
+                    <p class="affichage">Clubbing - Dark Nine 9</p>
+                    <ul>
+                        <li class="clickable" data-city="budapest">
+                            Chemin vers D9
+                            <img src="images/budapest/clubbing/ext.png" width="300">
+                        </li>
+                        <li class="clickable" data-city="budapest">
+                            Chemin vers D9
+                            <img src="images/budapest/clubbing/ext2.png" width="300">
+                        </li>
+                        <li class="clickable" data-city="budapest">
+                            D9
+                            <img src="images/budapest/clubbing/d9.png" width="300">
+                        </li>
+                        <li class="clickable" data-city="budapest">
+                            D9
+                            <img src="images/budapest/clubbing/D92.png" width="300">
+                        </li>
+                        <li class="clickable" data-city="budapest">
+                            D9
+                            <img src="images/budapest/clubbing/D93.png" width="300">
+                        </li>
+                    </ul>
+                </section>
+
+                <!-- VIENNE -->
+                <section id="vienne" class="sub-content-section" style="display: none;">
+                    <div class="title-container">
+                        <h2 class="title">Vienne</h2>
+                    </div>
+                    <p class="affichage">Château de Schonbrunn
+                        <ul>
+                            <li class="clickable" data-city="vienne">
+                                Château de Schonbrunn - Salon de Thé
+                                <img src="images/vienne/ville/schon.png" width="420">
+                            </li>
+                            <li class="clickable" data-city="vienne">
+                                Château de Schonbrunn - Lustre
+                                <img src="images/vienne/ville/schon2.png" width="420">
+                            </li>
+                            <li class="clickable" data-city="vienne">
+                                Schonbrunn - "Celebration on the occasion of the <br>anniversary of the Military Order of Maria Theresa"
+                                <img src="images/vienne/ville/schon6.png" width="400" style="width: 400px;">
+                            </li>
+                            <li class="clickable" data-city="vienne">
+                                Château de Schonbrunn - "The Entrance of Emperor Francis I"
+                                <img src="images/vienne/ville/schon4.png" width="700">
+                            </li>
+                            <li class="clickable" data-city="vienne">
+                                Château de Schonbrunn - Orchestre
+                                <img src="images/vienne/ville/schon5.png" width="400" style="width: 400px;">
+                            </li>
+                            <li class="clickable" data-city="vienne">
+                                Château de Schonbrunn - Vue extérieure
+                                <img src="images/vienne/ville/schon3.png" width="800">
+                            </li>
+                            <li class="clickable" data-city="vienne">
+                                Château de Schonbrunn - Salle des fêtes
+                                <img src="images/vienne/ville/schon7.png" width="450">
+                            </li>
+                            <li class="clickable" data-city="vienne">
+                                cmoi ^^
+                                <img src="images/vienne/ville/schon8.png" width="300">
+                            </li>
+                            <li class="clickable" data-city="vienne">
+                                Orchestre - Börsensäle Wiener
+                                <img src="images/vienne/ville/orch.png" width="300">
+                            </li>
+                        </ul>
+                    <p class="affichage">Monuments - Ville
+                        <ul>
+                            <li class="clickable" data-city="vienne">
+                                Schlossgarten
+                                <img src="images/vienne/ville/schloss.png" width="550">
+                            </li>
+                            <li class="clickable" data-city="vienne">
+                                Votivkirche
+                                <img src="images/vienne/ville/eglise.png" width="300">
+                            </li>
+                            <li class="clickable" data-city="vienne">
+                                Votivkirche
+                                <img src="images/vienne/ville/eglise2.png" width="300">
+                            </li>
+                            <li class="clickable" data-city="vienne">
+                                Hofburg
+                                <img src="images/vienne/ville/hofburg.png" width="300">
+                            </li>
+                            <li class="clickable" data-city="vienne">
+                                Albertina
+                                <img src="images/vienne/ville/albertina.png" width="300">
+                            </li>
+                            <li class="clickable" data-city="vienne">
+                                Vienne - Nuit
+                                <img src="images/vienne/ville/ville.png" width="300">
+                            </li>
+                           
+                        </ul>
+                    <p class="affichage">Bibliothèque Nationale
+                        <ul>
+                            <li class="clickable" data-city="vienne">
+                                Bibliothèque - Plafond
+                                <img src="images/vienne/ville/bibli.png" width="300">
+                            </li>
+                            <li class="clickable" data-city="vienne">
+                                Bibliothèque - Plafond 2
+                                <img src="images/vienne/ville/bibli2.png" width="300">
+                            </li>
+                            <li class="clickable" data-city="vienne">
+                                Bibliothèque - Ancienne partition de Mozart
+                                <img src="images/vienne/ville/bibli3.png" width="300">
+                            </li>
+                            <li class="clickable" data-city="vienne">
+                                Bibliothèque - Extérieure
+                                <img src="images/vienne/ville/bibli4.png" width="550">
+                            </li>
+                            
+                        </ul>
+                    <p class="affichage">Clubbing - Das Werk
+                        <ul>
+                            <li class="clickable" data-city="vienne">
+                                Das werk - Under the bridge
+                                <img src="images/vienne/club/ext.png" width="300">
+                            </li>
+                            <li class="clickable" data-city="vienne">
+                                Das werk - Tampon d'entrée
+                                <img src="images/vienne/club/ext2.png" width="300">
+                            </li>
+                            <li class="clickable" data-city="vienne">
+                                Das werk - Sortie au matin 
+                                <img src="images/vienne/club/ext3.png" width="300">
+                            </li>
+                            <li class="clickable" data-city="vienne">
+                                Das werk - Intérieure
+                                <img src="images/vienne/club/ext4.png" width="230">
+                            </li>
+                        </ul>
+                </section>
+
+                <!-- BRATISLAVA -->
+                <section id="bratislava" class="sub-content-section" style="display: none;">
+                    <div class="title-container" data-city="bratislava">
+                        <h2 class="title">Bratislava</h2>
+                    </div>
+                    <p class="affichage">Château de Bratislava - Colline
+                    
+                        <ul>
+                            <li class="clickable" data-city="bratislava">
+                               Bratislava - Conseil national 
+                                <img src="images/bratislava/coll.png" width="300">
+                            </li>
+                            <li class="clickable" data-city="bratislava">
+                               Château de Bratislava I - Hrad
+                                <img src="images/bratislava/coll2.png" width="300">
+                            </li>
+                            <li class="clickable" data-city="bratislava">
+                                Château de Bratislava I - Hrad
+                                <img src="images/bratislava/coll3.png" width="300">
+                            </li>
+                            <li class="clickable" data-city="bratislava">
+                                Château de Bratislava I - Hrad
+                                <img src="images/bratislava/coll4.png" width="300">
+                            </li>
+                            <li class="clickable" data-city="bratislava">
+                                Château de Bratislava I - Hrad
+                                <img src="images/bratislava/coll5.png" width="300">
+                            </li>
+                            <li class="clickable" data-city="bratislava">
+                                Château de Bratislava I - Hrad
+                                <img src="images/bratislava/coll6.png" width="300">
+                            </li>
+                            <li class="clickable" data-city="bratislava">
+                                Château de Bratislava I - Hrad
+                                <img src="images/bratislava/coll7.png" width="300">
+                            </li>
+                        </ul>
+                    <p class="affichage">Vieille Ville
+                        <ul>
+                            <li class="clickable" data-city="bratislava">
+                                Bratislava - Hôtel de Ville
+                                <img src="images/bratislava/vi.png" width="300">
+                            </li>
+                            <li class="clickable" data-city="bratislava">
+                                Bratislava - Rue de la vielle ville
+                                <img src="images/bratislava/vi2.png" width="300">
+                            </li>
+                            <li class="clickable" data-city="bratislava">
+                                Bratislava - Rue de la vielle ville 2
+                                <img src="images/bratislava/old.png" width="300">
+                            </li>
+                            <li class="clickable" data-city="bratislava">
+                                Bratislava - Théâtre Nationale
+                                <img src="images/bratislava/budova.png" width="300">
+                            </li>
+                            <li class="clickable" data-city="bratislava">
+                                Bratislava - Port Osobny
+                                <img src="images/bratislava/vi3.png" width="300">
+                            </li>
+                            <li class="clickable" data-city="bratislava">
+                                Bratislava - Vielle chapelle 
+                                <img src="images/bratislava/vi4.png" width="300">
+                            </li>
+                            <li class="clickable" data-city="bratislava">
+                                Bratislava - QDL (que du love)
+                                <img src="images/bratislava/love.png" width="300">
+                            </li>
+                        </ul>
+                </section>
+
+                <!-- Dresden -->
+                <section id="dresden" class="sub-content-section" style="display: none;">
+                    <div class="title-container">
+                        <h2 class="title">Dresden</h2>
+                    </div>
+                    <p class="affichage">A visiter</p>
+                    <ul>
+                        <li class="clickable" data-city="dresden">
+                            Notre-Dame de Dresde
+                            <img src="images/dresden/church.png" width="300">
+                        </li>
+
+                    
+                        <li class="clickable" data-city="dresden">
+                            Intérieur de l'Eglise
+                            <img src="images/dresden/int.png" width="300">
+                        </li>
+
+                        <li class="clickable" data-city="dresden">
+                            Monuments de la guerre
+                            <img src="images/dresden/monu.png" width="300">
+                        </li>
+                        
+                        <li class="clickable" data-city="dresden">
+                            Quartier de la ville
+                            <img src="images/dresden/quartier.png" width="300">
+                        </li>
+
+                        <li class="clickable" data-city="dresden">
+                            Fleuve Elbe
+                            <img src="images/dresden/lake.png" width="300">
+                        </li>
+
+                    </ul>
+                </section>
+
+                <!-- Leipzig -->
+                <section id="leipzig" class="sub-content-section" style="display: none;">
+                    <div class="title-container">
+                        <h2 class="title">Leipzig</h2>
+                    </div>
+                    <p class="affichage">Découvrez la ville</p>
+                    <ul>
+                        <li class="clickable" data-city="leipzig">
+                            Centre-Ville
+                            <img src="images/leipzig/city.png" width="300">
+                        </li>
+
+                    
+                        <li class="clickable" data-city="leipzig">
+                            Monument des Nations (Vue de devant)
+                            <img src="images/leipzig/nation.png" width="300">
+                        </li>
+
+                        <li class="clickable" data-city="leipzig">
+                            Statue JS Bach
+                            <img src="images/leipzig/bach.png" width="300">
+                        </li>
+                    </ul>
+                    <p class="affichage">Clubbing</p>
+                    <ul>
+                        <li class="clickable" data-city="leipzig">
+                            Institut für Zukunft (Entrée)
+                            <img src="images/leipzig/club1.png" width="600">
+                        </li>
+                        <li class="clickable" data-city="leipzig">
+                            Institut für Zukunft (Extérieur)
+                            <img src="images/leipzig/exte.png" width="300">
+                        </li>
+                       
+                    </ul>
+                </section>
+                
+                
+            </div>
+        </section>
+        
+            <!-- MARS -->
+            <section id="mars" class="sub-content-section" style="display: none;">
+                <div class="title-container">
+                    <h2 class="title">Mars</h2>
+                </div>
+                <p class="affichage">Studentenwohnheim</p>
+                <ul>
+                    <li class="clickable" data-city="mars">
+                        German Class A0
+                        <img src="images/mars/1.png" width="500">
+                    </li>
+                    <li class="clickable" data-city="mars">
+                        Banana beer is AWFUL
+                        <img src="images/mars/banana.png" width="500">
+                    </li>
+                    <li class="clickable" data-city="mars">
+                        Buddy ^^
+                        <img src="images/mars/marraine.png" width="700">
+                    </li>
+                    <li class="clickable" data-city="mars">
+                        Alcohol fingers
+                        <img src="images/mars/3.png" width="400">
+                    </li>
+                    <li class="clickable" data-city="mars">
+                        Mexican food with Irish beer in GERMANY 
+                        <img src="images/mars/4.png" width="400">
+                    </li>
+                    <li class="clickable" data-city="mars">
+                        MBTI (korean's fault)
+                        <img src="images/mars/mbti.png" width="350">
+                    </li>
+                    <li class="clickable" data-city="mars">
+                        First Sightseeing in Chemnitz Studentenwohnheim
+                        <img src="images/mars/chem.png" width="400">
+                    </li>
+                    </ul>
+                    <p class="affichage">Chemnitz University Guide</p>
+                    <ul>
+                        <li class="clickable" data-city="mars">
+                            DongJing surpried
+                            <img src="images/mars/guide.png" width="400" >
+                        </li>
+
+                        <li class="clickable" data-city="mars">
+                            DongJing happy
+                            <img src="images/mars/guide2.png" width="400" >
+                        </li>
+
+                        <li class="clickable" data-city="mars">
+                            DongJing crying
+                            <img src="images/mars/guide3.png" width="400" >
+                        </li>
+
+                        <li class="clickable" data-city="mars">
+                            DongJing eating
+                            <img src="images/mars/guide4.png" width="400" >
+                        </li>
+
+                        <li class="clickable" data-city="mars">
+                            DongJing drinking
+                            <img src="images/mars/guide5.png" width="400" >
+                        </li>
+
+                        <li class="clickable" data-city="mars">
+                            DongJing learning
+                            <img src="images/mars/guide6.png" width="400" >
+                        </li>
+
+                        <li class="clickable" data-city="mars">
+                            DongJing studying
+                            <img src="images/mars/guide7.png" width="400" >
+                        </li>
+
+                        <li class="clickable" data-city="mars">
+                            Bye DongJing 
+                            <img src="images/mars/guide8.png" width="400" >
+                        </li>
+
+                
+                    </ul>
+                    <p class="affichage">Berlin avec pauloooo</p>
+                    <ul>
+                        <li class="clickable" data-city="mars">
+                            First day in BERLIN
+                            <img src="images/mars/pber.png" width="400" >
+                        </li>
+                        <li class="clickable" data-city="mars">
+                            Aesthetic pic
+                            <img src="images/mars/pber2.png" width="550" >
+                        </li>
+                        <li class="clickable" data-city="mars">
+                            Mexican guy in Berlin
+                            <img src="images/mars/pber3.png" width="400" >
+                        </li>
+                        <li class="clickable" data-city="mars">
+                            After Clubbing Alte Muenze
+                            <img src="images/mars/pber4.png" width="450" style="width:400px;">
+                        </li>
+                        <li class="clickable" data-city="mars">
+                            Soju (expensive af)
+                            <img src="images/mars/pber8.png" width="400" style="width:330px;">
+                        </li>
+                        <li class="clickable" data-city="mars">
+                            Vitenamese food in Berlin
+                            <img src="images/mars/pber6.png" width="450" style="width:380px;">
+                        </li>
+                        <li class="clickable" data-city="mars">
+                            Paulo ce chilleur
+                            <img src="images/mars/pber7.png" width="400" >
+                        </li>
+                        <li class="clickable" data-city="mars">
+                            Paulo ce chilleur v2
+                            <img src="images/mars/pber9.png" width="400" >
+                        </li>
+                        <li class="clickable" data-city="mars">
+                            Paulo ce chilleur v3
+                            <img src="images/mars/pber5.png" width="400"style="width:400px;" >
+                        </li>
+                        
+
+                    </ul>
+                    <p class="affichage">Dresden avec les erasmus guys</p>
+                    <ul>
+                        <li class="clickable" data-city="mars">
+                            Turkish in Dresden
+                            <img src="images/mars/dera.png" width="400"style="width:400px;" >
+                        </li>
+                        <li class="clickable" data-city="mars">
+                            Korean in Dresden
+                            <img src="images/mars/dera2.png" width="400"style="width:400px;" >
+                        </li>
+                        <li class="clickable" data-city="mars">
+                            Korean Pingoo
+                            <img src="images/mars/dera3.png" width="400"style="width:400px;" >
+                        </li>
+
+                    </ul>
+
+                    <p class="affichage">Leipzig avec les vrais erasmus guys</p>
+                    <ul>
+                        <li class="clickable" data-city="mars">
+                            Me in Leipzig ^^
+                            <img src="images/mars/ler.png" width="400"style="width:350px;" >
+                        </li>
+                        <li class="clickable" data-city="mars">
+                            Before Clubbing 1
+                            <img src="images/mars/ler2.png" width="400"style="width:460px;">
+                        </li>
+                        <li class="clickable" data-city="mars">
+                            Before Clubbing 2
+                            <img src="images/mars/ler3.png" width="400"style="width:350px;">
+                        </li>
+                        <li class="clickable" data-city="mars">
+                            Before Clubbing 3
+                            <img src="images/mars/ler4.png" width="400"style="width:300px;">
+                        </li>
+                        <li class="clickable" data-city="mars">
+                            Before Clubbing 4
+                            <img src="images/mars/ler8.png" width="400"style="width:400px;" >
+                        </li>
+                        <li class="clickable" data-city="mars">
+                            After Clubbing 1
+                            <img src="images/mars/ler5.png" width="400"style="width:300px;" >
+                        </li>
+                        <li class="clickable" data-city="mars">
+                            After Clubbing 2
+                            <img src="images/mars/ler6.png" width="400"style="width:300px;">
+                        </li>
+                        
+                        <li class="clickable" data-city="mars">
+                            Clubbing in Leipzig
+                            <img src="images/mars/ler7.png" width="800" >
+                        </li>
+
+                    </ul>
+            </section>
+
+            <!-- AVRIL -->
+            <section id="avril" class="sub-content-section" style="display: none;">
+                <div class="title-container">
+                    <h2 class="title">Avril</h2>
+                </div>
+                <p class="affichage">Chill Zone</p>
+            
+                <ul>   
+                    <li class="clickable">    
+                        Turkish house
+                        <img src="images/avril/ch.png" width="280">
+                    </li>
+                    <li class="clickable">    
+                        Before Pebdorm
+                        <img src="images/avril/ch3.png" width="380">
+                    </li>
+                    <li class="clickable">    
+                        Buddy's party
+                        <img src="images/avril/ch2.png" width="500" style="width: 670px;">
+                    </li>
+                </ul>
+
+                <p class="affichage">Techno Train !</p>
+                <ul>   
+                    <li class="clickable">    
+                        Techno Train night
+                        <img src="images/avril/tc.png" width="300">
+                    </li>
+
+                    <li class="clickable">    
+                        Techno Train day
+                        <img src="images/avril/tc2.png" width="400">
+                    </li>
+
+                    <li class="clickable">    
+                        Techno train début
+                        <img src="images/avril/tc3.png" width="300">
+                    </li>
+                    <li class="clickable">    
+                        Techno train fin
+                        <img src="images/avril/tc6.png" width="300">
+                    </li>
+                    <li class="clickable">    
+                        Before döner kebab - nuremberg
+                        <img src="images/avril/tc4.png" width="280">
+                    </li>
+                    <li class="clickable">    
+                        techno train - bracelet
+                        <img src="images/avril/tc5.png" width="370">
+                    </li>
+                </ul>
+
+                <p class="affichage">Clubbing in Berlin</p>
+                <ul>   
+                    <li class="clickable">    
+                        Out of TRESOR
+                        <img src="images/avril/ber.png" width="300">
+                    </li>
+                    <li class="clickable">    
+                        tresor club
+                        <img src="images/avril/ber2.png" width="400">
+                    </li>
+                </ul>
+            </section>
+
+            <!-- MAI -->
+            <section id="mai" class="sub-content-section" style="display: none;">
+                <div class="title-container">
+                    <h2 class="title">Mai</h2>
+                </div>
+                    <p class="affichage">Chill/Birthday</p>
+            
+                <ul>   
+                    <li class="clickable">   
+                        Korean food
+                        <img src="images/mai/ch2.png" width="350">
+                    </li>
+                    <li class="clickable">    
+                        Surprise birthday 1
+                        <img src="images/mai/ch4.png" width="350">
+                    </li>
+                    <li class="clickable">   
+                        Surprise birthday 2 
+                        <img src="images/mai/ch5.png" width="270">
+                    </li>
+                    <li class="clickable">   
+                        Surprise birthday 3
+                        <img src="images/mai/ch6.png" width="270">
+                    </li>
+                    <li class="clickable"> 
+                        Surprise birthday 4  
+                        <img src="images/mai/ch3.png" width="680">
+                    </li>
+                    <li class="clickable">    
+                        Repas multiculturel
+                        <img src="images/mai/ch.png" width="500">
+                    </li>
+                </ul>
+            </section>
+
+            <!-- JUIN -->
+            <section id="juin" class="sub-content-section" style="display: none;">
+                <div class="title-container">
+                    <h2 class="title">Juin</h2>
+                </div>
+                <p class="affichage">Chill</p>
+            
+                <ul>
+                    <section id="video-section">
+                        <div class="clickable">
+                            <p class="video-title">Beer Pong Géant - Chemnitz</p>
+                            <video id="monVideo" controls>
+                                <source src="images/juin/beer.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                    </section>
+                </ul>
+                
+
+                <p class="affichage">HIVE FESTIVAL</p>
+            </section>
+
+            <!-- JUILLET -->
+            <section id="juillet" class="sub-content-section" style="display: none;">
+                <div class="title-container">
+                    <h2 class="title">Juillet</h2>
+                </div>
+                    <p class="affichage">photos</p>
+            
+                <ul>   
+                    <li class="clickable">    
+                        <img src="images/mars/1.png" width="300">
+                    </li>
+                </ul>
+            </section>
+        
+    </main>
+
+    
+       
+    <script src="script.js"></script>
+</body>
+</html>
