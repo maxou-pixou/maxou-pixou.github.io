@@ -243,12 +243,43 @@ document.getElementById('cancelButton').addEventListener('click', function() {
 });
 
 
-// Fonction JavaScript pour lire ou mettre en pause la vidéo
-function lireOuPause() {
-    var video = document.getElementById("monVideo");
-    if (video.paused) {
-        video.play();
-    } else {
-        video.pause();
-    }
-}
+// // Fonction JavaScript pour lire ou mettre en pause la vidéo
+// function lireOuPause() {
+//     var video = document.getElementById("monVideo");
+//     if (video.paused) {
+//         video.play();
+//     } else {
+//         video.pause();
+//     }
+// }
+
+document.addEventListener('DOMContentLoaded', function() {
+    const videos = document.getElementById('maVideo'); // Sélectionne toutes les vidéos
+    const correctPassword = "hive";  // Remplace par le mot de passe désiré
+
+    videos.forEach(videoElement => {
+        // Désactive les contrôles de la vidéo jusqu'à ce que le mot de passe soit correct
+        videoElement.controls = false;
+
+        // Écouteur d'événements pour chaque vidéo
+        videoElement.addEventListener('click', function(event) {
+            // Empêche la lecture de démarrer par défaut
+            if (!videoElement.controls) {
+                event.preventDefault(); // Évite que la vidéo se lance par défaut
+
+                // Demande le mot de passe
+                let enteredPassword = prompt("Entrez le mot de passe pour regarder la vidéo :");
+
+                // Vérifie le mot de passe
+                if (enteredPassword === correctPassword) {
+                    videoElement.controls = true; // Active les contrôles si le mot de passe est correct
+                    videoElement.play(); // Lance la vidéo
+                } else {
+                    alert("Mot de passe incorrect !");
+                    location.reload(); // Rafraîchit la page si le mot de passe est incorrect ou si l'utilisateur clique sur Annuler
+                }
+            }
+        });
+    });
+});
+

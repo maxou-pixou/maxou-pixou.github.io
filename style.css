@@ -954,9 +954,28 @@ nav {
     display: flex;
     flex-wrap: wrap;
     list-style-type: none;
+    padding: 0;
+    margin: 0;
+    font-weight: bold;
 }
 
-    /* juillet - Friends */
+#juin li {
+    margin: 10px;
+    text-align: center;
+}
+
+#juin img {
+    
+    display: block;
+    margin: 0 auto;
+    transition: transform 0.3s ease;
+}
+
+#juin ul li img:hover {
+    transform: scale(1.05);
+}
+
+/* juillet - Friends */
 #juillet {
     /* background-image: url('images/cath.png');
     background-size: cover;
@@ -1006,7 +1025,27 @@ nav {
     display: flex;
     flex-wrap: wrap;
     list-style-type: none;
+    padding: 0;
+    margin: 0;
+    font-weight: bold;
 }
+
+#juillet li {
+    margin: 10px;
+    text-align: center;
+}
+
+#juillet img {
+    
+    display: block;
+    margin: 0 auto;
+    transition: transform 0.3s ease;
+}
+
+#juillet ul li img:hover {
+    transform: scale(1.05);
+}
+
 /*Barre de recherche  */
 /* Conteneur de la barre de recherche */
 .search-container {

@@ -39,7 +39,7 @@
             </ul>
         </nav>
         <div class="search-container">
-            <input type="text" id="searchBox" placeholder="Rechercher..." onkeydown="handleKeyDown(event)" oninput="updateSuggestions()">
+            <input type="text" id="searchBox" placeholder="Search..." onkeydown="handleKeyDown(event)" oninput="updateSuggestions()">
             <ul id="suggestions" class="suggestions-list"></ul>
             <button id="cancelButton">Cancel</button>   
         </div>
@@ -99,6 +99,10 @@
                              Berlin Wall
                             <img src="images/berlin/monument/wall.png" width="300">
                         </li>
+                        <li class="clickable" data-city="berlin">
+                            Berlin Hauptbahnhof
+                           <img src="images/berlin/monument/hbf.png" width="300">
+                       </li>
                     </ul>
 
                     <p class="affichage">Clubbing</p>
@@ -128,7 +132,25 @@
                             <img src="images/berlin/clubbing/tresor.png" width="300">
                         </li>
                     </ul>
-                
+                    <p class="affichage">Zoo</p>
+                    <ul>
+                        <li class="clickable" data-city="mai">
+                            Berlin Zoo 1
+                            <img src="images/berlin/zoo/zoo.png" width="340">
+                        </li>
+                        <li class="clickable" data-city="mai">
+                            Berlin Zoo 2
+                            <img src="images/berlin/zoo/zoo2.png" width="340">
+                        </li>
+                        <li class="clickable" data-city="mai">
+                            Berlin Zoo 3
+                            <img src="images/berlin/zoo/zoo3.png" width="340">
+                        </li>
+                        <li class="clickable" data-city="mai">
+                            Berlin Zoo 4
+                            <img src="images/berlin/zoo/zoo4.png" width="340">
+                        </li>
+                    </ul>
                 </section>
 
                 <!-- CHEMNITZ -->
@@ -386,10 +408,6 @@
                                 <img src="images/vienne/ville/schon7.png" width="450">
                             </li>
                             <li class="clickable" data-city="vienne">
-                                cmoi ^^
-                                <img src="images/vienne/ville/schon8.png" width="300">
-                            </li>
-                            <li class="clickable" data-city="vienne">
                                 Orchestre - Börsensäle Wiener
                                 <img src="images/vienne/ville/orch.png" width="300">
                             </li>
@@ -456,10 +474,7 @@
                                 Das werk - Sortie au matin 
                                 <img src="images/vienne/club/ext3.png" width="300">
                             </li>
-                            <li class="clickable" data-city="vienne">
-                                Das werk - Intérieure
-                                <img src="images/vienne/club/ext4.png" width="230">
-                            </li>
+
                         </ul>
                 </section>
 
@@ -605,8 +620,7 @@
                        
                     </ul>
                 </section>
-                
-                
+ 
             </div>
         </section>
         
@@ -795,15 +809,15 @@
                 <p class="affichage">Chill Zone</p>
             
                 <ul>   
-                    <li class="clickable">    
+                    <li class="clickable" data-city="avril">    
                         Turkish house
                         <img src="images/avril/ch.png" width="280">
                     </li>
-                    <li class="clickable">    
+                    <li class="clickable" data-city="avril">    
                         Before Pebdorm
                         <img src="images/avril/ch3.png" width="380">
                     </li>
-                    <li class="clickable">    
+                    <li class="clickable" data-city="avril">    
                         Buddy's party
                         <img src="images/avril/ch2.png" width="500" style="width: 670px;">
                     </li>
@@ -811,43 +825,53 @@
 
                 <p class="affichage">Techno Train !</p>
                 <ul>   
-                    <li class="clickable">    
+                    <li class="clickable" data-city="avril">    
                         Techno Train night
                         <img src="images/avril/tc.png" width="300">
                     </li>
 
-                    <li class="clickable">    
+                    <li class="clickable" data-city="avril">    
                         Techno Train day
                         <img src="images/avril/tc2.png" width="400">
                     </li>
 
-                    <li class="clickable">    
+                    <li class="clickable" data-city="avril">    
                         Techno train début
                         <img src="images/avril/tc3.png" width="300">
                     </li>
-                    <li class="clickable">    
+                    <li class="clickable" data-city="avril">    
                         Techno train fin
                         <img src="images/avril/tc6.png" width="300">
                     </li>
-                    <li class="clickable">    
+                    <li class="clickable" data-city="avril">    
                         Before döner kebab - nuremberg
                         <img src="images/avril/tc4.png" width="280">
                     </li>
-                    <li class="clickable">    
+                    <li class="clickable" data-city="avril">    
                         techno train - bracelet
                         <img src="images/avril/tc5.png" width="370">
                     </li>
                 </ul>
 
-                <p class="affichage">Clubbing in Berlin</p>
+                <p class="affichage">Trying Berghain</p>
                 <ul>   
-                    <li class="clickable">    
-                        Out of TRESOR
+                    <li class="clickable" data-city="avril">    
+                        After Tresor
                         <img src="images/avril/ber.png" width="300">
                     </li>
-                    <li class="clickable">    
-                        tresor club
+                    <li class="clickable" data-city="avril">    
+                        Tresor Cub
                         <img src="images/avril/ber2.png" width="400">
+                    </li>
+                    <li class="clickable" data-city="avril">    
+                        <section id="video-section">
+                            <div class="clickable">
+                                <p class="video-title">OOTD !</p>
+                                <video id="monVideo" controls>
+                                    <source src="images/avril/berg.mp4" type="video/mp4">
+                                </video>
+                            </div>
+                        </section>
                     </li>
                 </ul>
             </section>
@@ -857,32 +881,120 @@
                 <div class="title-container">
                     <h2 class="title">Mai</h2>
                 </div>
-                    <p class="affichage">Chill/Birthday</p>
+                <p class="affichage">Berlin avec hugooooo</p>
+                <ul>
+                    <li class="clickable" data-city="mai">
+                        Hugo in Chemnitz !
+                        <img src="images/mai/hugo.png" width="260">
+                    </li>
+                    <li class="clickable" data-city="mai">
+                        Road to Berlin !
+                        <img src="images/mai/road.png" width="260">
+                    </li>
+                    <li class="clickable" data-city="mai">
+                        Alexanderplatz Pub 
+                        <img src="images/mai/alex.png" width="260">
+                    </li>
+                    <li class="clickable" data-city="mai">
+                        Chemnitz Lake with Emir
+                        <img src="images/mai/lac.png" width="350">
+                    </li>
+
+                </ul>
+                <p class="affichage">Trying Berghain again ...</p>
+                <ul>
+                    <li class="clickable" data-city="mai">   
+                        Lost in Elsterwerda (again)
+                        <img src="images/mai/elster.png" width="300">
+                    </li>
+                    <li class="clickable" data-city="mai">
+                        <section id="video-section">
+                            <div class="clickable">
+                                <p class="video-title">OOTD !</p>
+                                <video id="monVideo" controls>
+                                    <source src="images/mai/berg.mp4" type="video/mp4">
+                                </video>
+                            </div>
+                        </section>
+                    </li>
+                    <li class="clickable" data-city="mai">   
+                        Thinking about life ...
+                        <img src="images/mai/lol.png" width="400">
+                    </li>
+                    <li class="clickable" data-city="mai">   
+                        But cheering together !
+                        <img src="images/mai/lol2.png" width="400">
+                    </li>
+                    <li class="clickable" data-city="mai">   
+                        Berlin - Street Art (us)
+                        <img src="images/mai/eheh.png" width="400">
+                    </li>
+                    <li class="clickable" data-city="mai">   
+                        Berlin - Street Art (still us)
+                        <img src="images/mai/eheh2.png" width="400">
+                    </li>
+                    <li class="clickable" data-city="mai">   
+                        Berlin - Street Art (again yes)
+                        <img src="images/mai/eheh3.png" width="400">
+                    </li>
+                </ul>
+                <p class="affichage">Chill/Birthday</p>
             
                 <ul>   
-                    <li class="clickable">   
-                        Korean food
+                    <li class="clickable" data-city="mai">   
+                        Emir losing ...
+                        <img src="images/mai/peb.png" width="350">
+                    </li>
+                    <li class="clickable" data-city="mai">   
+                        Korean food is still too spicy omgg
                         <img src="images/mai/ch2.png" width="350">
                     </li>
-                    <li class="clickable">    
+                    <li class="clickable" data-city="mai">    
                         Surprise birthday 1
                         <img src="images/mai/ch4.png" width="350">
                     </li>
-                    <li class="clickable">   
+                    <li class="clickable" data-city="mai">   
                         Surprise birthday 2 
                         <img src="images/mai/ch5.png" width="270">
                     </li>
-                    <li class="clickable">   
+                    <li class="clickable" data-city="mai">   
                         Surprise birthday 3
                         <img src="images/mai/ch6.png" width="270">
                     </li>
-                    <li class="clickable"> 
+                    <li class="clickable" data-city="mai"> 
                         Surprise birthday 4  
                         <img src="images/mai/ch3.png" width="680">
                     </li>
-                    <li class="clickable">    
+                    <li class="clickable" data-city="mai">    
                         Repas multiculturel
                         <img src="images/mai/ch.png" width="500">
+                    </li>
+                </ul>
+                <p class="affichage">Road Trip Vienne/Buda/Brat</p>
+                <ul>
+                    <li class="clickable" data-city="mai">   
+                        Prague check point
+                        <img src="images/mai/pra.png" width="240">
+                    </li>
+                    <li class="clickable"  data-city="mai">
+                        Vienne - Château de Schonbrunn
+                        <img src="images/mai/schon8.png" width="300">
+                    </li>
+                    <li class="clickable"  data-city="mai">
+                        Vienne - Das werk 
+                        <img src="images/mai/ext4.png" width="240">
+                    </li>
+                    <li class="clickable"  data-city="mai">
+                        Budapest - Parlement 
+                        <img src="images/mai/buda.png" width="300">
+                    </li>
+                    <li class="clickable"  data-city="mai">
+                        Budapest - Dark nine
+                        <img src="images/mai/buda2.png" width="230">
+                    </li>
+                    <li class="clickable"  data-city="mai">
+                        Bratislava - Hostel Old Town
+                        <img src="images/mai/brat.png" width="240">
                     </li>
                 </ul>
             </section>
@@ -892,21 +1004,161 @@
                 <div class="title-container">
                     <h2 class="title">Juin</h2>
                 </div>
-                <p class="affichage">Chill</p>
+                <p class="affichage">Chill/Berlin</p>
             
                 <ul>
-                    <section id="video-section">
-                        <div class="clickable">
-                            <p class="video-title">Beer Pong Géant - Chemnitz</p>
-                            <video id="monVideo" controls>
-                                <source src="images/juin/beer.mp4" type="video/mp4">
-                            </video>
-                        </div>
-                    </section>
+                    <li class="clickable" data-city="juin">
+                        Anomalie Art Club - Berlin
+                        <img src="images/juin/aac.png" width="280">
+                    </li>
+                    <li class="clickable" data-city="juin">
+                        <section id="video-section">
+                            <div class="clickable">
+                                <p class="video-title">AAC - Out 10am (sober)</p>
+                                <video id="monVideo" controls>
+                                    <source src="images/juin/aac2.mp4" type="video/mp4">
+                                </video>
+                            </div>
+                        </section>
+                    </li>
+                    <li class="clickable" data-city="juin">
+                        Anomalie Art Club - out2 10am
+                        <img src="images/juin/aac3.png" width="380">
+                    </li>
+                    <li class="clickable" data-city="juin">
+                        Anomalie Art Club - French Guys
+                        <img src="images/juin/anoma.png" width="700">
+                    </li>
+                    <li class="clickable" data-city="avril">    
+                        <section id="video-section">
+                            <div class="clickable">
+                                <p class="video-title">Beer pong géant !</p>
+                                <video id="monVideo" controls>
+                                    <source src="images/juin/beer.mp4" type="video/mp4">
+                                </video>
+                            </div>
+                        </section>
+                    </li>
+                    
+                    
                 </ul>
                 
 
                 <p class="affichage">HIVE FESTIVAL</p>
+                <ul>
+                    <li class="clickable" data-city="juin">
+                        Hive scene
+                        <img src="images/juin/hive2.png" width="420">
+                    </li>
+                    <li class="clickable" data-city="juin">
+                        Hive scene !
+                        <img src="images/juin/hive3.png" width="420">
+                    </li>
+                    <li class="clickable" data-city="juin">
+                        Hive random cool girl
+                        <img src="images/juin/hive4.png" width="320">
+                    </li>
+                    <li class="clickable" data-city="juin">
+                        Hive night scene !!!
+                        <img src="images/juin/hive8.png" width="420">
+                    </li>
+                    <li class="clickable" data-city="juin">
+                        <section id="video-section">
+                            <div class="clickable" id ="blurOverlay">
+                                <p class="video-title">Hive Festival - Outfit !</p>
+                                <video id="monVideo" controls onclick="demanderMotDePasse('monVideo', 'videoPassword')">
+                                    <source src="images/juin/hive.mp4" type="video/mp4">
+                                </video>
+                            </div>
+                        </section>
+                    </li>
+                    <li class="clickable" data-city="juin">
+                        <section id="video-section">
+                            <div class="clickable">
+                                <p class="video-title">Hive Main Scene</p>
+                                <video id="monVideo" controls>
+                                    <source id="maVideo" src="images/juin/hive6.mp4" type="video/mp4">
+                                </video>
+                            </div>
+                        </section>
+                    </li>
+                    <li class="clickable" data-city="juin">
+                        <section id="video-section">
+                            <div class="clickable">
+                                <p class="video-title">psytrance scene omgg</p>
+                                <video id="monVideo" controls>
+                                    <source id="maVideo" src="images/juin/hive7.mp4" type="video/mp4">
+                                </video>
+                                
+                            </div>
+                        </section>
+                    </li>
+                    <li class="clickable" data-city="juin">
+                        <section id="video-section">
+                            <div class="clickable">
+                                <p class="video-title">MAD DOG</p>
+                                <video id="monVideo" controls>
+                                    <source src="images/juin/hive9.mp4" type="video/mp4">
+                                </video>
+                            </div>
+                        </section>
+                    </li>
+                    <li class="clickable" data-city="juin">
+                        <section id="video-section">
+                            <div class="clickable">
+                                <p class="video-title">MAD DOG</p>
+                                <video id="monVideo" controls>
+                                    <source src="images/juin/hive10.mp4" type="video/mp4">
+                                </video>
+                            </div>
+                        </section>
+                    </li>
+                    <li class="clickable" data-city="juin">
+                        <section id="video-section">
+                            <div class="clickable">
+                                <p class="video-title">ANGERFIST</p>
+                                <video id="monVideo" controls>
+                                    <source src="images/juin/hive11.mp4" type="video/mp4">
+                                </video>
+                            </div>
+                        </section>
+                    </li>
+                    <li class="clickable" data-city="juin">
+                        <section id="video-section">
+                            <div class="clickable">
+                                <p class="video-title">ANGERFIST</p>
+                                <video id="monVideo" controls>
+                                    <source src="images/juin/hive12.mp4" type="video/mp4">
+                                </video>
+                            </div>
+                        </section>
+                    </li>
+                    <li class="clickable" data-city="juin">
+                        <section id="video-section">
+                            <div class="clickable">
+                                <p class="video-title">ANGERFIST</p>
+                                <video id="monVideo" controls>
+                                    <source src="images/juin/hive13.mp4" type="video/mp4">
+                                </video>
+                            </div>
+                        </section>
+                    </li>
+                    <li class="clickable" data-city="juin">
+                        <section id="video-section">
+                            <div class="clickable">
+                                <p class="video-title">dancing sunday</p>
+                                <video id="monVideo" controls>
+                                    <source src="images/juin/hive14.mp4" type="video/mp4">
+                                </video>
+                            </div>
+                        </section>
+                    </li>
+                    <li class="clickable" data-city="juin">
+                        Hive leaving - thx for the memories
+                        <img src="images/juin/hive15.png" width="300">
+                    </li>
+                </ul>
+                
             </section>
 
             <!-- JUILLET -->
@@ -914,11 +1166,177 @@
                 <div class="title-container">
                     <h2 class="title">Juillet</h2>
                 </div>
-                    <p class="affichage">photos</p>
+                <p class="affichage">Gera - best date ever with PIERRE THE ORANGE </p>
             
                 <ul>   
-                    <li class="clickable">    
-                        <img src="images/mars/1.png" width="300">
+                    <li class="clickable" data-city="juillet"> 
+                        Église de Gera   
+                        <img src="images/juillet/gera.png" width="350">
+                    </li>
+                    <li class="clickable" data-city="juillet">   
+                        chardonnay date 
+                        <img src="images/juillet/gera2.png" width="270">
+                    </li>
+                    <li class="clickable" data-city="juillet"> 
+                        beautiful guy   
+                        <img src="images/juillet/gera5.png" width="270">
+                    </li>
+                    <li class="clickable" data-city="juillet"> 
+                        best date ever   
+                        <img src="images/juillet/gera4.png" width="350">
+                    </li>
+                    <li class="clickable" data-city="juillet">    
+                        beautiful sunset
+                        <img src="images/juillet/gera3.png" width="350">
+                    </li>
+                </ul>
+
+                <p class="affichage">CSD-B JULIE ASTRID LUCIEN JE VOUS AIME</p>
+                <ul>    
+                    <li class="clickable" data-city="juillet">
+                        <section id="video-section">
+                            <div class="clickable">
+                                <p class="video-title">Gay pride !</p>
+                                <video id="monVideo" controls>
+                                    <source src="images/juillet/csd2.mp4" type="video/mp4">
+                                </video>
+                            </div>
+                        </section>
+                    </li>
+                    <li class="clickable" data-city="juillet">
+                        <section id="video-section">
+                            <div class="clickable">
+                                <p class="video-title">Gay pride 2 !</p>
+                                <video id="monVideo" controls>
+                                    <source src="images/juillet/csd3.mp4" type="video/mp4">
+                                </video>
+                            </div>
+                        </section>
+                    </li>
+                    <li class="clickable" data-city="juillet">
+                        <section id="video-section">
+                            <div class="clickable">
+                                <p class="video-title">Gay pride 3 !</p>
+                                <video id="monVideo" controls>
+                                    <source src="images/juillet/csd7.mp4" type="video/mp4">
+                                </video>
+                            </div>
+                        </section>
+                    </li>
+                    <li class="clickable" data-city="juillet">
+                        <section id="video-section">
+                            <div class="clickable">
+                                <p class="video-title">Gay pride 4 !</p>
+                                <video id="monVideo" controls>
+                                    <source src="images/juillet/csd4.mp4" type="video/mp4">
+                                </video>
+                            </div>
+                        </section>
+                    </li>
+                    <li class="clickable" data-city="juillet">
+                        <section id="video-section">
+                            <div class="clickable">
+                                <p class="video-title">Gay pride 5 !</p>
+                                <video id="maVideo" controls>
+                                    <source src="images/juillet/csd5.mp4" type="video/mp4">
+                                </video>
+                            </div>
+                        </section>
+                    </li>
+                    <li class="clickable" data-city="juillet">    
+                        love u
+                        <img src="images/juillet/csd6.png" width="500">
+                    </li>
+                    <li class="clickable" data-city="juillet">    
+                        still love u
+                        <img src="images/juillet/csd10.png" width="400">
+                    </li>
+                    <li class="clickable" data-city="juillet">    
+                        so happy to be here
+                        <img src="images/juillet/csd9.png" width="350">
+                    </li>
+                    <li class="clickable" data-city="juillet">    
+                        2 beautiful people 
+                        <img src="images/juillet/csd8.png" width="1200">
+                    </li>
+                    <li class="clickable" data-city="juillet">   
+                        best team !! 
+                        <img src="images/juillet/csd11.png" width="400">
+                    </li>
+                    <li class="clickable" data-city="juillet"> 
+                        still best team !!   
+                        <img src="images/juillet/csd12.png" width="700">
+                    </li>
+                    <li class="clickable" data-city="juillet">    
+                        thx astrid ^^
+                        <img src="images/juillet/csd13.png" width="400">
+                    </li>
+                    <li class="clickable" data-city="juillet">    
+                        lets go party in BERLIN
+                        <img src="images/juillet/csd14.png" width="400">
+                    </li>
+                    <li class="clickable" data-city="juillet">    
+                        after techno eheh
+                        <img src="images/juillet/csd15.png" width="400">
+                    </li>
+                    <li class="clickable" data-city="juillet">    
+                        beautiful people 
+                        <img src="images/juillet/csd16.png" width="150">
+                    </li>
+                    <li class="clickable" data-city="juillet">    
+                        love u guys omg
+                        <img src="images/juillet/csd17.png" width="450">
+                    </li>
+                    <li class="clickable" data-city="juillet">    
+                        lucien chillin
+                        <img src="images/juillet/csd18.png" width="450">
+                    </li>
+                    <li class="clickable" data-city="juillet">    
+                        best sunset in best city
+                        <img src="images/juillet/csd19.png" width="400">
+                    </li>
+                    <li class="clickable" data-city="juillet">
+                        see u guys love u    
+                        <img src="images/juillet/csd20.png" width="700">
+                    </li>
+                </ul>
+                <p class="affichage">last goodbye - ERASMUS GUYS (love u)</p>
+                <ul>
+                    <li class="clickable" data-city="juillet">    
+                        chillin iin chemnitz
+                        <img src="images/juillet/ju.png" width="400">
+                    </li>
+                    <li class="clickable" data-city="juillet">
+                        love u korean girl
+                        <img src="images/juillet/ju2.png" width="400">
+                    </li>
+                    <li class="clickable" data-city="juillet">    
+                        me ^^
+                        <img src="images/juillet/ju4.png" width="300">
+                    </li>
+                    <li class="clickable" data-city="juillet">    
+                        turkish and korean
+                        <img src="images/juillet/ju3.png" width="550">
+                    </li>
+                    <li class="clickable" data-city="juillet">    
+                        everyone omg
+                        <img src="images/juillet/ju5.png" width="550">
+                    </li>
+                    <li class="clickable" data-city="juillet">   
+                        my beautiful korean girls 
+                        <img src="images/juillet/ju8.png" width="300">
+                    </li>
+                    <li class="clickable" data-city="juillet">    
+                        miss u
+                        <img src="images/juillet/ju7.png" width="300">
+                    </li>
+                    <li class="clickable" data-city="juillet">   
+                        still miss u
+                        <img src="images/juillet/ju6.png" width="550">
+                    </li>
+                    <li class="clickable" data-city="juillet"> 
+                        thx for this erasmus, really   
+                        <img src="images/juillet/ju9.png" width="550">
                     </li>
                 </ul>
             </section>
