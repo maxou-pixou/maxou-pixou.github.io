@@ -1,16 +1,16 @@
 
 function showSection(sectionId) {
-    // Cache toutes les sections principales
+
     const sections = document.querySelectorAll('.content-section');
     sections.forEach(section => section.style.display = 'none');
     
-    // Affiche la section sélectionnée
+
     const sectionToShow = document.getElementById(sectionId);
     if (sectionToShow) {
         sectionToShow.style.display = 'block';
 
        
-        // Affiche ou cache le sous-menu pour "Travelling"
+    
         if (sectionId === 'travelling') {
             document.getElementById('travelling-submenu').style.display = 'block';
         } else {
@@ -21,24 +21,24 @@ function showSection(sectionId) {
 }
 
 function showSubSection(subSectionId) {
-    // Cache toutes les sous-sections
+
     const subSections = document.querySelectorAll('.sub-content-section');
     subSections.forEach(subSection => subSection.style.display = 'none');
     
-    // Affiche la sous-section sélectionnée
+
     const subSectionToShow = document.getElementById(subSectionId);
     if (subSectionToShow) {
         subSectionToShow.style.display = 'block';
     }
    
-    // Affiche la section principale "Travelling"
+
     const travellingSection = document.getElementById('travelling');
     if (travellingSection) {
         travellingSection.style.display = 'block';
     }
 
 
-    // Cache les autres sections principales
+
     const mainSections = document.querySelectorAll('.content-section');
     mainSections.forEach(section => {
       
@@ -49,48 +49,46 @@ function showSubSection(subSectionId) {
     });
 }
 
-// Fonction pour stocker la dernière recherche et effectuer le filtrage global
 function storeSearch() {
     const searchQuery = document.getElementById('searchBox').value.toLowerCase();
 
     if (searchQuery) {
-        localStorage.setItem('lastSearch', searchQuery); // Stocke l'information dans le localStorage
+        localStorage.setItem('lastSearch', searchQuery);
         filterMonuments(searchQuery);
         
     } else {
-        filterMonuments(''); // Réaffiche tout si la recherche est vide
+        filterMonuments('');
     }
 }
 
-// Fonction pour filtrer les monuments à travers toutes les villes et changer de section si nécessaire
 function filterMonuments(query) {
-    let found = false; // Pour savoir si un monument correspondant a été trouvé
-    let sections = document.querySelectorAll('.content-section'); // Toutes les sections (villes)
+    let found = false;
+    let sections = document.querySelectorAll('.content-section');
 
     sections.forEach(function(section) {
-        let monuments = section.querySelectorAll('ul li.clickable'); // Monuments de cette ville
-        let cityHasMatch = false; // Indique si cette ville contient un monument correspondant
+        let monuments = section.querySelectorAll('ul li.clickable');
+        let cityHasMatch = false;
 
         monuments.forEach(function(monument) {
-            let title = monument.textContent.toLowerCase(); // Titre du monument
+            let title = monument.textContent.toLowerCase();
 
-            // Affiche ou masque le monument en fonction de la recherche
+        
             if (title.includes(query)) {
-                monument.style.display = ''; // Affiche le monument
-                cityHasMatch = true; // Cette ville a un monument correspondant
+                monument.style.display = '';
+                cityHasMatch = true;
             } else {
-                monument.style.display = 'none'; // Cache le monument
+                monument.style.display = 'none';
             }
         });
 
-        // Si cette ville contient un monument correspondant, on la montre, sinon on la cache
+    
         if (cityHasMatch && !found) {
-            found = true; // On a trouvé un monument correspondant
-            showSection(section.id); // Affiche la ville/section où se trouve le monument
+            found = true;
+            showSection(section.id);
         }
     });
 
-    // Si aucune correspondance n'est trouvée, affiche un message ou réinitialise l'affichage
+
     if (!found) {
         console.log("Aucun monument trouvé pour cette recherche.");
     }
@@ -99,7 +97,7 @@ function filterMonuments(query) {
 function updateSuggestions() {
     let searchTerm = document.getElementById('searchBox').value.toLowerCase();
     let suggestions = document.getElementById('suggestions');
-    suggestions.innerHTML = ''; // Clear previous suggestions
+    suggestions.innerHTML = '';
 
     if (searchTerm.length > 0) {
         let allItems = document.querySelectorAll('.clickable');
@@ -107,7 +105,7 @@ function updateSuggestions() {
 
         allItems.forEach(item => {
             let text = item.textContent.toLowerCase();
-            // Ne pas inclure les éléments de recherche précédente
+        
             if (text.includes(searchTerm) && text !== localStorage.getItem('lastSearch')) {
                 matchingItems.push(item);
             }
@@ -129,39 +127,39 @@ function selectSuggestion(item) {
     let searchTerm = item.textContent.toLowerCase();
     let city = item.getAttribute('data-city');
 
-    // Afficher la section de la ville
+
     if (city) {
         showSection('travelling')
         showSection('friends');
         showSubSection(city);
     }
 
-    // Effacer le champ de recherche
+
     document.getElementById('searchBox').value = '';
 
-    // Clear the suggestions list
+
     document.getElementById('suggestions').innerHTML = '';
 
-    // Montrer seulement l'élément sélectionné
+
     let allItems = document.querySelectorAll('.clickable');
     allItems.forEach(listItem => {
-        listItem.style.display = 'none'; // Cacher tous les éléments
+        listItem.style.display = 'none';
     });
     
-    item.style.display = 'block'; // Montrer seulement l'élément sélectionné
-    item.scrollIntoView({ behavior: 'smooth' }); // Faire défiler jusqu'à l'élément
+    item.style.display = 'block';
+    item.scrollIntoView({ behavior: 'smooth' });
 }
 
 
 
 function showSection(sectionId) {
-    // Cache toutes les sections
+
     const sections = document.querySelectorAll('.content-section');
     sections.forEach(section => {
         section.style.display = 'none';
     });
 
-    // Affiche la section principale sélectionnée
+
     const targetSection = document.getElementById(sectionId);
     if (targetSection) {
         targetSection.style.display = 'block';
@@ -169,19 +167,19 @@ function showSection(sectionId) {
 }
 
 function showSubSection(subSectionId) {
-    // Cache toutes les sous-sections
+
     const subSections = document.querySelectorAll('.sub-content-section');
     subSections.forEach(subSection => {
         subSection.style.display = 'none';
     });
 
-    // Affiche la sous-section sélectionnée
+
     const targetSubSection = document.getElementById(subSectionId);
     if (targetSubSection) {
         targetSubSection.style.display = 'block';
     }
 
-    // S'assurer que la section "Travelling" est visible
+
     showSection('travelling');
     
 }
@@ -200,14 +198,14 @@ function handleKeyDown(event) {
         });
 
         if (foundItem) {
-            // Récupérer la ville associée à cet élément
+        
             let city = foundItem.getAttribute('data-city');
             if (city) {
-                // Naviguer vers la section correspondante
+            
                 showSection('travelling');
                 showSubSection(city);
                 
-                // Faire défiler jusqu'à l'élément trouvé
+            
                 foundItem.scrollIntoView({ behavior: 'smooth' });
             }
         } else {
@@ -217,66 +215,57 @@ function handleKeyDown(event) {
 }
 
 window.onload = function() {
-    // Récupérer et afficher la dernière recherche
+
     const lastSearch = localStorage.getItem('lastSearch');
     if (lastSearch) {
         document.getElementById('searchBox').value = lastSearch;
-        filterMonuments(lastSearch); // Applique le filtre au chargement
+        filterMonuments(lastSearch);
     }
-    // Optionnel : tu peux supprimer cette ligne si tu souhaites garder la dernière recherche jusqu'à ce qu'une nouvelle soit faite
-    // localStorage.clear(); // Efface tout le localStorage
+
+
 };
 document.getElementById('cancelButton').addEventListener('click', function() {
-    // Vider la valeur du champ de recherche
+
     document.getElementById('searchBox').value = '';
 
-    // Vider le localStorage
+
     localStorage.removeItem('lastSearch');
 
-    // Réinitialiser l'affichage des monuments
-    filterMonuments(''); // Réaffiche tous les monuments
 
-    // Vider la liste des suggestions s'il y en a
+    filterMonuments('');
+
+
     document.getElementById('suggestions').innerHTML = '';
 
 
 });
 
 
-// // Fonction JavaScript pour lire ou mettre en pause la vidéo
-// function lireOuPause() {
-//     var video = document.getElementById("monVideo");
-//     if (video.paused) {
-//         video.play();
-//     } else {
-//         video.pause();
-//     }
-// }
 
 document.addEventListener('DOMContentLoaded', function() {
-    const videos = document.getElementById('maVideo'); // Sélectionne toutes les vidéos
-    const correctPassword = "hive";  // Remplace par le mot de passe désiré
+    const videos = document.getElementById('maVideo');
+    const correctPassword = "hive"; 
 
     videos.forEach(videoElement => {
-        // Désactive les contrôles de la vidéo jusqu'à ce que le mot de passe soit correct
+    
         videoElement.controls = false;
 
-        // Écouteur d'événements pour chaque vidéo
+    
         videoElement.addEventListener('click', function(event) {
-            // Empêche la lecture de démarrer par défaut
+        
             if (!videoElement.controls) {
-                event.preventDefault(); // Évite que la vidéo se lance par défaut
+                event.preventDefault();
 
-                // Demande le mot de passe
+            
                 let enteredPassword = prompt("Entrez le mot de passe pour regarder la vidéo :");
 
-                // Vérifie le mot de passe
+            
                 if (enteredPassword === correctPassword) {
-                    videoElement.controls = true; // Active les contrôles si le mot de passe est correct
-                    videoElement.play(); // Lance la vidéo
+                    videoElement.controls = true;
+                    videoElement.play();
                 } else {
                     alert("Mot de passe incorrect !");
-                    location.reload(); // Rafraîchit la page si le mot de passe est incorrect ou si l'utilisateur clique sur Annuler
+                    location.reload();
                 }
             }
         });
