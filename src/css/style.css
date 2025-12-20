@@ -9,7 +9,6 @@ body {
     background-color: #c5d8d7;
 }
 
-
 .affichage {
     font-size: 50px;
     font-family: 'Times New Roman', Times, serif;
@@ -19,7 +18,6 @@ body {
     background-color: #5B696B;
     margin: 0;
 }
-
 
 .title-container {
     display: flex;
@@ -45,7 +43,6 @@ body {
     font-family: "Lucida Handwriting";
     margin: 0;
 }
-
 
 #album {
     text-align: left;
@@ -98,7 +95,6 @@ nav {
     background-color: #575757;
 }
 
-
 .submenu {
     display: none;
     position: absolute;
@@ -124,16 +120,13 @@ nav {
     background-color: #575757;
 }
 
-
 .nav-item:hover .submenu {
     display: block;
 }
 
-
 .content-section {
     display: none;
 }
-
 
 #berlin {
 
@@ -206,7 +199,6 @@ nav {
     transform: scale(1.05);
 }
 
-
 #chemnitz {
 
     width: 100%;
@@ -272,7 +264,6 @@ nav {
 #chemnitz ul li img:hover {
     transform: scale(1.05);
 }
-
 
 #budapest {
   
@@ -408,7 +399,6 @@ nav {
 #vienne ul li img:hover {
     transform: scale(1.05);
 }
-
 
 #bratislava {
   
@@ -1066,7 +1056,6 @@ nav {
     transform: translateX(-50%);
 }
 
-
 #searchBox:focus {
     border-color: #425263;
     outline: none;
@@ -1120,11 +1109,9 @@ nav {
     transition: background-color 0.3s ease;
 }
 
-
 #cancelButton:hover {
     background-color: #d32f2f;
 }
-
 
 .video-container {
     display: flex;
@@ -1139,7 +1126,6 @@ nav {
     overflow: hidden;
     transition: transform 0.3s ease-in-out;
 }
-
 
 .video-container:hover {
     transform: scale(1.05);
@@ -1158,7 +1144,6 @@ nav {
     font-size: 16px;
     transition: background-color 0.3s;
 }
-
 
 .play-button:hover {
     background-color: #2980b9;
