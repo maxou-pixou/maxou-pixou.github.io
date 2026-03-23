@@ -9,7 +9,7 @@ if (ENVIRONMENT === "development") {
 }
 
 if (ENVIRONMENT === "production") {
-  APP_URL = "https://app-2d1f83e8-8817-42cb-be94-d6bf76162358.cleverapps.io";
+  APP_URL = "https://maxou-pixou.github.io/";
   API_URL = "https://app-9c868a36-44e3-4971-a2af-ac420773201e.cleverapps.io";
 }
 
