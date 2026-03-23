@@ -23,8 +23,15 @@ export default defineConfig({
   },
   esbuild: {
     loader: "jsx",
-    include: ["src/**/*.jsx", "src/**/*.js"],
-    exclude: ["node_modules", "build"],
+    include: /src\/.*\.jsx?$/,
+    exclude: [],
+  },
+  optimizeDeps: {
+    esbuildOptions: {
+      loader: {
+        ".js": "jsx",
+      },
+    },
   },
   plugins: [react()],
 });
