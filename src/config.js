@@ -7,10 +7,11 @@ if (ENVIRONMENT === "development") {
   API_URL = "http://localhost:8080";
   APP_URL = "http://localhost:3000";
 }
+app-9c868a36-44e3-4971-a2af-ac420773201e.cleverapps.io
 
 if (ENVIRONMENT === "production") {
-  APP_URL = "https://boilerplate-app.cleverapps.io/ ";
-  API_URL = "https://boilerplate-api.cleverapps.io/";
+  APP_URL = "https://app-2d1f83e8-8817-42cb-be94-d6bf76162358.cleverapps.io";
+  API_URL = "https://app-9c868a36-44e3-4971-a2af-ac420773201e.cleverapps.io";
 }
 
 const SENTRY_URL = "";
